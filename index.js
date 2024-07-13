@@ -3,11 +3,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const appRoutes = require('./routes/appRoutes')
 
 const PORT = 5000;
 
 const app = express();
-
 
 app.use(cors({
     origin: '*',
@@ -16,8 +16,7 @@ app.use(cors({
 
 app.use(bodyParser.json());
 
-
-console.log("Hello Jenish");
+app.use("/",appRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
