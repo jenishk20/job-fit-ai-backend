@@ -9,7 +9,6 @@ const PORT = 5000;
 
 const app = express();
 
-
 app.use(cors({
     origin: '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE']
@@ -18,8 +17,6 @@ app.use(cors({
 app.use(bodyParser.json());
 
 app.use("/",appRoutes);
-
-console.log("Hello World");
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
